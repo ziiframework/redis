@@ -1,6 +1,5 @@
 /.idea
 /vendor
-/composer.lock
 /tests/ActiveRecordTestTrait.php
 /tests/CacheTestCase.php
 /tests/BaseTestCase.php
