@@ -10,9 +10,9 @@ use yii\redis\SocketException;
 /**
  * @group redis
  */
-class ConnectionTest extends TestCase
+class RedisConnectionTest extends TestCase
 {
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $this->getConnection(false)->configSet('timeout', 0);
         parent::tearDown();

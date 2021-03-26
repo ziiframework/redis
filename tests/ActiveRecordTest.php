@@ -68,7 +68,7 @@ class ActiveRecordTest extends TestCase
         return OrderItemWithNullFK::className();
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         ActiveRecord::$db = $this->getConnection();
