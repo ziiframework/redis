@@ -4,8 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6c50acafc520b782fee04739d7363114",
-    "packages": [
+    "content-hash": "1df9dd7601876fa3e446a4c560439874",
+    "packages": [],
+    "packages-dev": [
         {
             "name": "cebe/markdown",
             "version": "1.2.1",
@@ -70,189 +71,6 @@
             },
             "time": "2018-03-26T11:24:36+00:00"
         },
-        {
-            "name": "ezyang/htmlpurifier",
-            "version": "v4.13.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
-                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.2"
-            },
-            "require-dev": {
-                "simpletest/simpletest": "dev-master#72de02a7b80c6bb8864ef9bf66d41d2f58f826bd"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "HTMLPurifier": "library/"
-                },
-                "files": [
-                    "library/HTMLPurifier.composer.php"
-                ],
-                "exclude-from-classmap": [
-                    "/library/HTMLPurifier/Language/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL-2.1-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Edward Z. Yang",
-                    "email": "admin@htmlpurifier.org",
-                    "homepage": "http://ezyang.com"
-                }
-            ],
-            "description": "Standards compliant HTML filter written in PHP",
-            "homepage": "http://htmlpurifier.org/",
-            "keywords": [
-                "html"
-            ],
-            "support": {
-                "issues": "https://github.com/ezyang/htmlpurifier/issues",
-                "source": "https://github.com/ezyang/htmlpurifier/tree/master"
-            },
-            "time": "2020-06-29T00:56:53+00:00"
-        },
-        {
-            "name": "ziiframework/composer",
-            "version": "3.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ziiframework/composer.git",
-                "reference": "f6d1118e76092b55d72958bfb755806984fc94eb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ziiframework/composer/zipball/f6d1118e76092b55d72958bfb755806984fc94eb",
-                "reference": "f6d1118e76092b55d72958bfb755806984fc94eb",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0|^2.0",
-                "ext-openssl": "*"
-            },
-            "require-dev": {
-                "composer/composer": "^1.0|^2.0",
-                "phpunit/phpunit": "^8.5"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "yii\\composer\\Plugin",
-                "branch-alias": {
-                    "dev-master": "4.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\composer\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Yii Team",
-                    "email": "team@yiiframework.com",
-                    "homepage": "http://www.yiiframework.com/team",
-                    "role": "Founder and project lead"
-                }
-            ],
-            "description": "zii-framework composer",
-            "keywords": [
-                "composer",
-                "zii-framework"
-            ],
-            "support": {
-                "issues": "https://github.com/ziiframework/composer/issues",
-                "source": "https://github.com/ziiframework/composer"
-            },
-            "time": "2021-03-25T13:47:31+00:00"
-        },
-        {
-            "name": "ziiframework/zii",
-            "version": "3.2.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ziiframework/zii.git",
-                "reference": "ca53aba0a1f85e9c3b1f86ef28e78ac874aff2df"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ziiframework/zii/zipball/ca53aba0a1f85e9c3b1f86ef28e78ac874aff2df",
-                "reference": "ca53aba0a1f85e9c3b1f86ef28e78ac874aff2df",
-                "shasum": ""
-            },
-            "require": {
-                "cebe/markdown": "^1.0",
-                "ext-ctype": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "ezyang/htmlpurifier": "^4.13",
-                "lib-pcre": "*",
-                "php": ">=7.3.0",
-                "ziiframework/composer": "~3.2.1"
-            },
-            "require-dev": {
-                "cebe/indent": "^1.0",
-                "cweagans/composer-patches": "^1.6",
-                "phpunit/phpunit": "^8.5"
-            },
-            "bin": [
-                "src/yii"
-            ],
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "4.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "yii\\": "src/"
-                },
-                "exclude-from-classmap": [
-                    "/tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Yii Team",
-                    "email": "team@yiiframework.com",
-                    "homepage": "http://www.yiiframework.com/team",
-                    "role": "Founder and project lead"
-                }
-            ],
-            "description": "zii framework",
-            "homepage": "https://github.com/ziiframework/zii",
-            "keywords": [
-                "framework",
-                "zii"
-            ],
-            "support": {
-                "issues": "https://github.com/ziiframework/zii/issues?state=open",
-                "source": "https://github.com/ziiframework/zii"
-            },
-            "time": "2021-03-25T14:20:08+00:00"
-        }
-    ],
-    "packages-dev": [
         {
             "name": "doctrine/instantiator",
             "version": "1.4.0",
@@ -321,6 +139,60 @@
                 }
             ],
             "time": "2020-11-10T18:47:58+00:00"
+        },
+        {
+            "name": "ezyang/htmlpurifier",
+            "version": "v4.13.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ezyang/htmlpurifier.git",
+                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
+                "reference": "08e27c97e4c6ed02f37c5b2b20488046c8d90d75",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "require-dev": {
+                "simpletest/simpletest": "dev-master#72de02a7b80c6bb8864ef9bf66d41d2f58f826bd"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "HTMLPurifier": "library/"
+                },
+                "files": [
+                    "library/HTMLPurifier.composer.php"
+                ],
+                "exclude-from-classmap": [
+                    "/library/HTMLPurifier/Language/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Edward Z. Yang",
+                    "email": "admin@htmlpurifier.org",
+                    "homepage": "http://ezyang.com"
+                }
+            ],
+            "description": "Standards compliant HTML filter written in PHP",
+            "homepage": "http://htmlpurifier.org/",
+            "keywords": [
+                "html"
+            ],
+            "support": {
+                "issues": "https://github.com/ezyang/htmlpurifier/issues",
+                "source": "https://github.com/ezyang/htmlpurifier/tree/master"
+            },
+            "time": "2020-06-29T00:56:53+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2025,6 +1897,133 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.10.0"
             },
             "time": "2021-03-09T10:59:23+00:00"
+        },
+        {
+            "name": "ziiframework/composer",
+            "version": "3.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ziiframework/composer.git",
+                "reference": "f6d1118e76092b55d72958bfb755806984fc94eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ziiframework/composer/zipball/f6d1118e76092b55d72958bfb755806984fc94eb",
+                "reference": "f6d1118e76092b55d72958bfb755806984fc94eb",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0|^2.0",
+                "ext-openssl": "*"
+            },
+            "require-dev": {
+                "composer/composer": "^1.0|^2.0",
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "yii\\composer\\Plugin",
+                "branch-alias": {
+                    "dev-master": "4.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\composer\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Yii Team",
+                    "email": "team@yiiframework.com",
+                    "homepage": "http://www.yiiframework.com/team",
+                    "role": "Founder and project lead"
+                }
+            ],
+            "description": "zii-framework composer",
+            "keywords": [
+                "composer",
+                "zii-framework"
+            ],
+            "support": {
+                "issues": "https://github.com/ziiframework/composer/issues",
+                "source": "https://github.com/ziiframework/composer"
+            },
+            "time": "2021-03-25T13:47:31+00:00"
+        },
+        {
+            "name": "ziiframework/zii",
+            "version": "3.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ziiframework/zii.git",
+                "reference": "80cacd861fff274cf839075fcb0c76cbb27866a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ziiframework/zii/zipball/80cacd861fff274cf839075fcb0c76cbb27866a7",
+                "reference": "80cacd861fff274cf839075fcb0c76cbb27866a7",
+                "shasum": ""
+            },
+            "require": {
+                "cebe/markdown": "~1.0.0 | ~1.1.0 | ~1.2.0",
+                "ext-ctype": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ezyang/htmlpurifier": "~4.13.0",
+                "lib-pcre": "*",
+                "php": ">=7.3.0",
+                "ziiframework/composer": "~3.2.1"
+            },
+            "require-dev": {
+                "cebe/indent": "^1.0",
+                "cweagans/composer-patches": "^1.6",
+                "phpunit/phpunit": "^8.5"
+            },
+            "bin": [
+                "src/yii"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "4.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "yii\\": "src/"
+                },
+                "exclude-from-classmap": [
+                    "/tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Yii Team",
+                    "email": "team@yiiframework.com",
+                    "homepage": "http://www.yiiframework.com/team",
+                    "role": "Founder and project lead"
+                }
+            ],
+            "description": "zii framework",
+            "homepage": "https://github.com/ziiframework/zii",
+            "keywords": [
+                "framework",
+                "zii"
+            ],
+            "support": {
+                "issues": "https://github.com/ziiframework/zii/issues?state=open",
+                "source": "https://github.com/ziiframework/zii"
+            },
+            "time": "2021-03-25T10:08:59+00:00"
         }
     ],
     "aliases": [],
@@ -2036,5 +2035,8 @@
         "ext-openssl": "*"
     },
     "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.3"
+    },
     "plugin-api-version": "2.0.0"
 }
