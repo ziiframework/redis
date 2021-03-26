@@ -8,15 +8,7 @@
 use yii\helpers\Inflector;
 use yii\helpers\Console;
 
-foreach([
-    __DIR__ . '/../vendor/yiisoft/yii2/Yii.php',
-    __DIR__ . '/../../../framework/Yii.php',
-] as $yii) {
-    if (is_file($yii)) {
-        include($yii);
-        break;
-    }
-}
+include(__DIR__ . '/../vendor/ziiframework/zii/src/Yii.php');
 
 $commandsHtml = file_get_contents('https://redis.io/commands');
 //echo $commandsHtml;

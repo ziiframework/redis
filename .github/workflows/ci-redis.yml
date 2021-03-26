@@ -17,6 +17,7 @@ jobs:
 
         php:
           - "7.4"
+          - "8.0"
 
         redis:
           - "5"
@@ -67,3 +68,4 @@ jobs:
         run: |
           wget https://scrutinizer-ci.com/ocular.phar
           php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+        continue-on-error: true # if is fork
