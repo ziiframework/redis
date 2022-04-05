@@ -9,6 +9,6 @@ $_SERVER['SCRIPT_NAME'] = '/' . __DIR__;
 $_SERVER['SCRIPT_FILENAME'] = __FILE__;
 
 require_once(__DIR__ . '/../vendor/autoload.php');
-require_once(__DIR__ . '/../vendor/ziiframework/zii/src/Yii.php');
+require_once(__DIR__ . '/../vendor/charescape/zii-devpack/src/Yii.php');
 
 Yii::setAlias('@yiiunit', '@yii/../tests');
