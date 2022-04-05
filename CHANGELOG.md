@@ -3,6 +3,7 @@ Yii Framework 2 redis extension Change Log
 
 upstream changes: [d3f79ac...master](https://github.com/yiisoft/yii2-redis/compare/d3f79ac...master)
 
+
 2.0.18 under development
 ------------------------
 
