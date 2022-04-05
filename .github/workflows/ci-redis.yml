@@ -51,10 +51,3 @@ jobs:
       - name: Run Redis 6 tests with PhpUnit and coverage
         if: matrix.redis == '6'
         run: vendor/bin/phpunit --coverage-clover=coverage.clover
-
-      - name: Code coverage
-        if: matrix.redis == '6'
-        run: |
-          wget https://scrutinizer-ci.com/ocular.phar
-          php ocular.phar code-coverage:upload --format=php-clover coverage.clover
-        continue-on-error: true # if is fork
