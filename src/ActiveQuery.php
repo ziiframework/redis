@@ -100,7 +100,7 @@ class ActiveQuery extends Component implements ActiveQueryInterface
      * an [[EVENT_INIT]] event. If you override this method, make sure you call the parent implementation at the end
      * to ensure triggering of the event.
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         $this->trigger(self::EVENT_INIT);
