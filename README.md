@@ -1,1 +1,1 @@
-ziiframework/redis (first commit 13b518e4f5f880b47bac33d5a15cfa049c689437)
+This repo is forked form [yiisoft/yii2-redis](https://github.com/yiisoft/yii2-redis.git).
