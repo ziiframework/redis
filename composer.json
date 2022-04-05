@@ -18,10 +18,10 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "ziiframework/zii": ">=3.5.0",
         "ext-openssl": "*"
     },
     "require-dev": {
+        "charescape/zii-devpack": "4.0.x-dev",
         "phpunit/phpunit": "^8.5"
     },
     "autoload": {
