@@ -238,11 +238,11 @@ use yii\helpers\VarDumper;
  * @method mixed hscan($key, $cursor, $MATCH = null, $pattern = null, $COUNT = null, $count = null) Incrementally iterate hash fields and associated values. <https://redis.io/commands/hscan>
  * @method mixed zscan($key, $cursor, $MATCH = null, $pattern = null, $COUNT = null, $count = null) Incrementally iterate sorted sets elements and associated scores. <https://redis.io/commands/zscan>
  *
- * @property-read string $connectionString Socket connection string. This property is read-only.
- * @property-read string $driverName Name of the DB driver. This property is read-only.
- * @property-read bool $isActive Whether the DB connection is established. This property is read-only.
- * @property-read LuaScriptBuilder $luaScriptBuilder This property is read-only.
- * @property-read resource|false $socket This property is read-only.
+ * @property-read string $connectionString Socket connection string.
+ * @property-read string $driverName Name of the DB driver.
+ * @property-read bool $isActive Whether the DB connection is established.
+ * @property-read LuaScriptBuilder $luaScriptBuilder
+ * @property-read resource|false $socket
  *
  * @author Carsten Brandt <mail@cebe.cc>
  * @since 2.0
@@ -276,6 +276,14 @@ class Connection extends Component
      * @since 2.0.1
      */
     public $unixSocket;
+    /**
+     * @var string|null username for establishing DB connection. Defaults to `null` meaning AUTH command will be performed without username.
+     * Username was introduced in Redis 6.
+     * @link https://redis.io/commands/auth
+     * @link https://redis.io/topics/acl
+     * @since 2.0.16
+     */
+    public $username;
     /**
      * @var string the password for establishing DB connection. Defaults to null meaning no AUTH command is sent.
      * See https://redis.io/commands/auth
@@ -638,7 +646,7 @@ class Connection extends Component
                 stream_socket_enable_crypto($socket, true, STREAM_CRYPTO_METHOD_TLS_CLIENT);
             }
             if ($this->password !== null) {
-                $this->executeCommand('AUTH', [$this->password]);
+                $this->executeCommand('AUTH', array_filter([$this->username, $this->password]));
             }
             if ($this->database !== null) {
                 $this->executeCommand('SELECT', [$this->database]);
@@ -761,7 +769,7 @@ class Connection extends Component
             $tries = $this->retries;
             while ($tries-- > 0) {
                 try {
-                    return $this->sendCommandInternal($command, $params);
+                    return $this->sendRawCommand($command, $params);
                 } catch (SocketException $e) {
                     \Yii::error($e, __METHOD__);
                     // backup retries, fail on commands that fail inside here
@@ -771,19 +779,45 @@ class Connection extends Component
                     if ($this->retryInterval > 0) {
                         usleep($this->retryInterval);
                     }
-                    $this->open();
+                    try {
+                        $this->open();
+                    } catch (SocketException $exception) {
+                        // Fail to run initial commands, skip current try
+                        \Yii::error($exception, __METHOD__);
+                        $this->close();
+                    } catch (Exception $exception) {
+                        $this->close();
+                    }
+
                     $this->retries = $retries;
                 }
             }
         }
-        return $this->sendCommandInternal($command, $params);
+        return $this->sendRawCommand($command, $params);
     }
 
     /**
      * Sends RAW command string to the server.
+     *
+     * @param string $command command string
+     * @param array $params list of parameters for the command
+     *
+     * @return array|bool|null|string Dependent on the executed command this method
+     * will return different data types:
+     *
+     * - `true` for commands that return "status reply" with the message `'OK'` or `'PONG'`.
+     * - `string` for commands that return "status reply" that does not have the message `OK` (since version 2.0.1).
+     * - `string` for commands that return "integer reply"
+     *   as the value is in the range of a signed 64 bit integer.
+     * - `string` or `null` for commands that return "bulk reply".
+     * - `array` for commands that return "Multi-bulk replies".
+     *
+     * See [redis protocol description](https://redis.io/topics/protocol)
+     * for details on the mentioned reply types.
+     * @throws Exception for commands that return [error reply](https://redis.io/topics/protocol#error-reply).
      * @throws SocketException on connection error.
      */
-    private function sendCommandInternal($command, $params)
+    protected function sendRawCommand($command, $params)
     {
         $written = @fwrite($this->socket, $command);
         if ($written === false) {
@@ -885,7 +919,7 @@ class Connection extends Component
 
             $this->open();
 
-            $response = $this->sendCommandInternal($command, $params);
+            $response = $this->sendRawCommand($command, $params);
 
             $this->redirectConnectionString = null;
 

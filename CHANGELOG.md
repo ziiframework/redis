@@ -1,8 +1,28 @@
 Yii Framework 2 redis extension Change Log
 ==========================================
 
-2.0.15 under development
+upstream changes: [d3f79ac...master](https://github.com/yiisoft/yii2-redis/compare/d3f79ac...master)
+
+2.0.18 under development
 ------------------------
+
+- no changes in this release.
+
+
+2.0.17 January 11, 2022
+-----------------------
+
+- Enh #176: Fix reconnect logic bug, add `protected function sendRawCommand()` (ilyaplot)
+
+
+2.0.16 October 04, 2021
+-----------------------
+
+- Enh #223: Add `Connection::$username` for using username for authentication (samdark, rvkulikov)
+
+
+2.0.15 May 05, 2021
+-------------------
 
 - Enh #227: Added support for adjusting PHP context options and parameters. This allows e.g. supporting self-signed certificates (akselikap)
 
