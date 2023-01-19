@@ -41,7 +41,7 @@ jobs:
           extensions: curl, intl, redis
           ini-values: date.timezone='UTC'
           coverage: xdebug
-          tools: composer:v2, pecl
+          tools: pecl
 
       - name: Install dependencies with Composer
         run: composer install --prefer-dist --no-interaction --no-progress --optimize-autoloader
