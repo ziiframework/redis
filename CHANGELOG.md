@@ -1,13 +1,17 @@
 Yii Framework 2 redis extension Change Log
 ==========================================
 
-upstream changes: [d3f79ac...master](https://github.com/yiisoft/yii2-redis/compare/d3f79ac...master)
-
-
-2.0.18 under development
+2.0.19 under development
 ------------------------
 
 - no changes in this release.
+
+
+2.0.18 September 04, 2022
+-------------------------
+
+- Enh #249 Added support to set the redis scheme to tls. Add to configuration: `'scheme' => 'tls'` (tychovbh)
+- Bug #247: `Cache::getValue()` now returns `false` in case of missing key (rhertogh)
 
 
 2.0.17 January 11, 2022
