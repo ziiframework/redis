@@ -1,8 +1,10 @@
 name: ci-redis
 
 on:
-  - pull_request
-  - push
+  pull_request:
+
+  push:
+
   schedule:
     # every day at 1:15 and 12:15 UTC
     - cron: '15 1,12 * * *'
