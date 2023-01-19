@@ -6,7 +6,7 @@ on:
 
 jobs:
   tests:
-    name: PHP ${{ matrix.php }}-redis-4
+    name: PHP ${{ matrix.php }}-redis-5
 
     runs-on: ${{ matrix.os }}
 
@@ -27,7 +27,7 @@ jobs:
       - name: Start Redis v4
         uses: superchargejs/redis-github-action@1.4.0
         with:
-          redis-version: 4
+          redis-version: 5
 
       - name: Install PHP with extensions
         uses: shivammathur/setup-php@v2
